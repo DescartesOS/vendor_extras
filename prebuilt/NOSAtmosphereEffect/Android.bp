@@ -1,0 +1,10 @@
+android_app_import {
+	name: "NOSAtmosphereEffect",
+	apk: "NOSAtmosphereEffect.apk",
+	dex_preopt: {
+		enabled: false,
+	},
+	preprocessed: true,
+    presigned: true,
+	product_specific: true,
+}
