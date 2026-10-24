@@ -167,7 +167,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     SwitchSmile \
-    NOSAtmosphereEffect
+    NOSAtmosphereEffect \
+    ScreenshotEditor
 
 ifeq ($(TARGET_CUSTOM_UDFPS),true)
     PRODUCT_PACKAGES += \
@@ -181,10 +182,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     HideSmartSpace \
-    SmartSpaceOffset \
     HideClock
-
-$(call inherit-product, vendor/extras/themes/bootanimation/bootanimation.mk)
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/extras/prebuilt/product/media/audio/ui,$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui) \
