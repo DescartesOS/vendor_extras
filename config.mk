@@ -8,15 +8,6 @@
 LOCAL_PATH := $(call my-dir)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
-# Clocks (SystemUI)
-PRODUCT_PACKAGES += \
-    SystemUIClocks-BigNum \
-    SystemUIClocks-Calligraphy \
-    SystemUIClocks-Growth \
-    SystemUIClocks-Inflate \
-    SystemUIClocks-Metro \
-    SystemUIClocks-NumOverlap
-
 ifneq ($(WITH_GMS),true)
     PRODUCT_COPY_FILES += \
         vendor/extras/product/etc/sysconfig/ambient_data.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/ambient_data.xml \
@@ -40,153 +31,43 @@ ifneq ($(WITH_GMS),true)
         vendor/extras/product/etc/sysconfig/preinstalled_packages_repair_mode.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled_packages_repair_mode.xml
 endif
 
-# Custom Overlays
+# Overlays
 PRODUCT_PACKAGES += \
-    GlanceableHubConfigOverlay \
-    GlanceableHubSettingsConfigOverlay \
-    GlanceableHubSettingsConfigOverlay2022 \
-    GlanceableHubSysuiConfigOverlay \
-    PixelLauncherNoGestureHintOverlay
-
-# Fonts
-PRODUCT_PACKAGES += \
-    fonts_customization.xml \
-    fonts_customization_emoji_facebook.xml \
-    fonts_customization_emoji_ios.xml \
-    fonts_customization_emoji_samsung.xml \
-    fonts_customization_emoji_swiftui.xml \
-    ClockFontACFilmstripOverlay \
-    ClockFontAccuratistOverlay \
-    ClockFontAclonicaOverlay \
-    ClockFontAlmonteSnowOverlay \
-    ClockFontAlphaCloudsOverlay \
-    ClockFontAlphaFlowersOverlay \
-    ClockFontAlphaWoodOverlay \
-    ClockFontAmaranteOverlay \
-    ClockFontAmpad3D2Overlay \
-    ClockFontBariolOverlay \
-    ClockFontBetsyFlanaganOverlay \
-    ClockFontBigCheeseOverlay \
-    ClockFontBrandayolqOverlay \
-    ClockFontBudmoJigglerOverlay \
-    ClockFontBunnyRabbitsOverlay \
-    ClockFontCFBadNewsOverlay \
-    ClockFontCFOneTwoTreesOverlay \
-    ClockFontCagliostroOverlay \
-    ClockFontCatOverlay \
-    ClockFontCoconOverlay \
-    ClockFontComfortaaOverlay \
-    ClockFontComicSansOverlay \
-    ClockFontConcentrateOverlay \
-    ClockFontCookieRunOverlay \
-    ClockFontCoolstoryOverlay \
-    ClockFontCrackmanOverlay \
-    ClockFontDiscoMidnightOverlay \
-    ClockFontEasterBunnyOverlay \
-    ClockFontEditPointsFilledOverlay \
-    ClockFontEditPointsOverlay \
-    ClockFontElriott2Overlay \
-    ClockFontExotwoOverlay \
-    ClockFontFibographyOverlay \
-    ClockFontFifa2018Overlay \
-    ClockFontFloorlightOverlay \
-    ClockFontGautsMotelUpperRightOverlay \
-    ClockFontGoogleSansFlexOverlay \
-    ClockFontGrandHotelOverlay \
-    ClockFontHangedOverlay \
-    ClockFontHarmonySansOverlay \
-    ClockFontHotSweatOverlay \
-    ClockFontKGOnlyHopeOverlay \
-    ClockFontKaramuruhOverlay \
-    ClockFontKingthingsOverlay \
-    ClockFontLMSCliffordOverlay \
-    ClockFontLatoOverlay \
-    ClockFontLinotteOverlay \
-    ClockFontLittleBunnyOverlay \
-    ClockFontLowerAtmosphereOverlay \
-    ClockFontMessingLetternOverlay \
-    ClockFontMonbijouxClownpieceOverlay \
-    ClockFontMotorola \
-    ClockFontNeonDiscoOverlay \
-    ClockFontNinjasOverlay \
-    ClockFontNokiaPureOverlay \
-    ClockFontNothingDotHeadlineOverlay \
-    ClockFontNunitoOverlay \
-    ClockFontOneplusSansOverlay \
-    ClockFontOneplusSlateOverlay \
-    ClockFontOswaldOverlay \
-    ClockFontPinewoodOverlay \
-    ClockFontPlaidEventOverlay \
-    ClockFontPlantsLettersOverlay \
-    ClockFontPlayOverlay \
-    ClockFontQuandoOverlay \
-    ClockFontQuickSouthOverlay \
-    ClockFontRedressedOverlay \
-    ClockFontReemKufiOverlay \
-    ClockFontRemponkOverlay \
-    ClockFontRobotoCondensedOverlay \
-    ClockFontRomantiquesOverlay \
-    ClockFontRoundheadsOverlay \
-    ClockFontRubikOverlay \
-    ClockFontSamsungOneOverlay \
-    ClockFontSansSerifOverlay \
-    ClockFontScrapItUpOverlay \
-    ClockFontSonySketchOverlay \
-    ClockFontSpaceGameOverlay \
-    ClockFontStandardHeaderOverlay \
-    ClockFontStoropiaOverlay \
-    ClockFontSurferOverlay \
-    ClockFontTh3machineOverlay \
-    ClockFontUbuntuOverlay \
-    ClockFontVtksdura3dOverlay \
-    ClockFontZnikomitNo24Overlay \
-    ClockFontIOSOverlay \
-    ClockFontHerculesOverlay \
-    ClockFontSlimOverlay \
-    ClockFontNtype82Overlay \
-    ClockFontSubwayOverlay \
-    FontGoogleSansFlexOverlay \
-    FontExtFontOverlay
-
-PRODUCT_PACKAGES += \
-    NavbarAndroidOverlay \
-    NavbarAsusOverlay \
-    NavbarMotoOverlay \
-    NavbarNexusOverlay \
-    NavbarOldOverlay \
-    NavbarOnePlusOverlay \
-    NavbarOneUiOverlay \
-    NavbarSammyOverlay \
-    NavbarTecnoCamonOverlay \
-    NavbarDoraOverlay
-
-# Themes
-PRODUCT_PACKAGES += \
-    AndroidBlackThemeOverlay \
-    ImmersiveNavigationOverlay
-
-PRODUCT_PACKAGES += \
-    SwitchSmile \
-    NOSAtmosphereEffect \
-    ScreenshotEditor
-
-ifeq ($(TARGET_CUSTOM_UDFPS),true)
-    PRODUCT_PACKAGES += \
-        UdfpsIcons \
-        UdfpsAnimations
-endif
-
-# QS
-PRODUCT_PACKAGES += \
+    ImmersiveNavigationOverlay \
+    PixelLauncherNoGestureHintOverlay \
     QSMedia
 
+# Icon shapes
 PRODUCT_PACKAGES += \
-    HideSmartSpace \
-    HideClock
+    IconShapeArchOverlay \
+    IconShapeCloudyOverlay \
+    IconShapeCylinderOverlay \
+    IconShapeFlowerOverlay \
+    IconShapeFourSidedCookieOverlay \
+    IconShapeHeartOverlay \
+    IconShapeHexagonOverlay \
+    IconShapeIosOverlay \
+    IconShapeLeafOverlay \
+    IconShapeMeowOverlay \
+    IconShapePebbleOverlay \
+    IconShapeRoundedHexagonOverlay \
+    IconShapeRoundedRectOverlay \
+    IconShapeSamsungOverlay \
+    IconShapeScrollOverlay \
+    IconShapeSevenSidedCookieOverlay \
+    IconShapeSquareOverlay \
+    IconShapeSquircleOverlay \
+    IconShapeStretchedOverlay \
+    IconShapeTaperedRectOverlay \
+    IconShapeTeardropOverlay \
+    IconShapeVesselOverlay
 
+# Apps
+PRODUCT_PACKAGES += \
+    NOSAtmosphereEffect \
+    ScreenshotEditor \
+    SwitchSmile
+
+# UI sounds
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/extras/prebuilt/product/media/audio/ui,$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui) \
-    $(call find-copy-subdir-files,*,vendor/extras/product/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts)
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.ax_emoji_style=android
+    $(call find-copy-subdir-files,*,vendor/extras/prebuilt/product/media/audio/ui,$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui)
