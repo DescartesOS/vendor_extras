@@ -34,7 +34,6 @@ endif
 # Overlays
 PRODUCT_PACKAGES += \
     ImmersiveNavigationOverlay \
-    PixelLauncherNoGestureHintOverlay \
     QSMedia
 
 # Icon shapes
